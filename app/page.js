@@ -6,7 +6,7 @@ import ItemList from './components/ItemList';
 
 export default function Home() {
   const [items, setItems] = useState([]);
-  const [filter, setFilter] = useState('all');
+  const [filter] = useState('all');
 
   // Filtrar os itens com base no estado atual do filtro
   const filteredItems = items.filter(item => {
