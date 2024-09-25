@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import AddItem from '../components/AddItem';
-import ItemList from '../components/ItemList';
+import AddItem from '../app/components/AddItem';
+import ItemList from '../app/components/ItemList';
 
 export default function Home() {
   const [items, setItems] = useState([]);
@@ -15,15 +15,6 @@ export default function Home() {
     newItems[index].completed = !newItems[index].completed;
     setItems(newItems);
   };
-
-  useEffect(() => {
-    const savedItems = JSON.parse(localStorage.getItem('items'));
-    if (savedItems) setItems(savedItems);
-  }, []);
-  
-  useEffect(() => {
-    localStorage.setItem('items', JSON.stringify(items));
-  }, [items]);
 
   return (
     <div>
